@@ -58,7 +58,7 @@ services:
     restart: always
     container_name: kafka3
     ports:
-      - 9093:9093
+      - 9094:9094
     environment:
       KAFKA_BROKER_ID: 103
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
