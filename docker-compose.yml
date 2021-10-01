@@ -81,7 +81,7 @@ services:
     ports:
       - 9095:9095
     environment:
-      KAFKA_BROKER_ID: 103
+      KAFKA_BROKER_ID: 104
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka4:9095
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
