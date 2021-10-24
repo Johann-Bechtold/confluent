@@ -269,5 +269,5 @@ services:
     command: /bin/sh
     tty: true
   
-  networks:
-    confluent: {}
+networks:
+  confluent: {}
