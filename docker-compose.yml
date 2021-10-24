@@ -270,6 +270,5 @@ services:
     tty: true
   
   networks:
-    default:
-      external: true
+    confluent:
       name: confluent
