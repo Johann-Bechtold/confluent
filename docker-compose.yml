@@ -270,4 +270,4 @@ services:
     tty: true
   
   networks:
-    confluent:
+    confluent: {}
