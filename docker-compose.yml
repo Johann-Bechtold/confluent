@@ -268,4 +268,8 @@ services:
       - .:/root/confluent-dev/
     command: /bin/sh
     tty: true
-
+  
+  networks:
+    default:
+      external: true
+      name: confluent
