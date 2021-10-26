@@ -12,7 +12,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
 
   kafka1:
-    image: confluentinc/cp-enterprise-kafka:6.0.0-1-ubi8
+    image: confluentinc/cp-enterprise-kafka:latest
     restart: always
     container_name: kafka1
     ports:
@@ -34,7 +34,7 @@ services:
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
 
   kafka2:
-    image: confluentinc/cp-enterprise-kafka:6.0.0-1-ubi8
+    image: confluentinc/cp-enterprise-kafka:latest
     restart: always
     container_name: kafka2
     ports:
@@ -56,7 +56,7 @@ services:
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
 
   kafka3:
-    image: confluentinc/cp-enterprise-kafka:6.0.0-1-ubi8
+    image: confluentinc/cp-enterprise-kafka:latest
     restart: always
     container_name: kafka3
     ports:
@@ -78,7 +78,7 @@ services:
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
 
   kafka4:
-    image: confluentinc/cp-enterprise-kafka:6.0.0-1-ubi8
+    image: confluentinc/cp-enterprise-kafka:latest
     restart: always
     container_name: kafka4
     ports:
@@ -100,7 +100,7 @@ services:
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
       
   webserver-avro:
-    image: cnfltraining/node-webserver-avro:1.0
+    image: cnfltraining/node-webserver-avro:latest
     restart: always
     container_name: webserver-avro
     hostname: webserver-avro
@@ -115,7 +115,7 @@ services:
                       npm run start'"
 
   webserver-pyavro:
-    image: cnfltraining/node-webserver-avro:1.0
+    image: cnfltraining/node-webserver-avro:latest
     restart: always
     container_name: webserver-pyavro
     hostname: webserver-pyavro
@@ -131,7 +131,7 @@ services:
 
 
   schema-registry:
-    image: confluentinc/cp-schema-registry:6.0.0-1-ubi8
+    image: confluentinc/cp-schema-registry:latest
     restart: always
     container_name: schema-registry
     ports:
@@ -142,7 +142,7 @@ services:
       KAFKA_REST_CUB_KAFKA_TIMEOUT: 180 # https://github.com/confluentinc/cp-docker-images/issues/807
 
   ksqldb-server:
-    image: confluentinc/cp-ksqldb-server:6.0.0-1-ubi8
+    image: confluentinc/cp-ksqldb-server:latest
     restart: always
     container_name: ksqldb-server
     ports:
@@ -170,7 +170,7 @@ services:
       - 5432:5432
 
   connect:
-    image: confluentinc/cp-kafka-connect:6.0.0-1-ubi8
+    image: confluentinc/cp-kafka-connect:latest
     restart: always
     container_name: connect
     ports:
@@ -218,7 +218,7 @@ services:
       CONTROL_CENTER_UI_AUTOUPDATE_ENABLE: "false"
       
   create-topics:
-    image: confluentinc/cp-enterprise-kafka:6.0.0-1-ubi8
+    image: confluentinc/cp-enterprise-kafka:latest
     container_name: create-topics
     command: >
       bash -c 'echo Waiting for Kafka to be ready... ;
@@ -237,7 +237,7 @@ services:
 
 
   tools:
-    image: cnfltraining/training-tools:6.0
+    image: cnfltraining/training-tools:latest
     container_name: tools
     hostname: tools
     volumes:
