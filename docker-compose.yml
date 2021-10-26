@@ -98,37 +98,6 @@ services:
       KAFKA_LOG_RETENTION_BYTES: 536870912
       CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: "kafka4:9095"
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
-      
-  webserver-avro:
-    image: cnfltraining/node-webserver-avro:latest
-    restart: always
-    container_name: webserver-avro
-    hostname: webserver-avro
-    ports:
-      - 3002:3000
-    environment:
-      TOPIC: driver-positions-avro
-    command: "bash -c 'until curl -fsSL schema-registry:8081/subjects/ | grep driver-positions-avro-value ; \
-                      do sleep 1; \
-                      echo waiting for schema; \
-                      done; \
-                      npm run start'"
-
-  webserver-pyavro:
-    image: cnfltraining/node-webserver-avro:latest
-    restart: always
-    container_name: webserver-pyavro
-    hostname: webserver-pyavro
-    ports:
-      - 3012:3000
-    environment:
-      TOPIC: driver-positions-pyavro
-    command: "bash -c 'until curl -fsSL schema-registry:8081/subjects/ | grep driver-positions-pyavro-value ; \
-                      do sleep 1; \
-                      echo waiting for schema; \
-                      done; \
-                      npm run start'"
-
 
   schema-registry:
     image: confluentinc/cp-schema-registry:latest
